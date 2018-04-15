@@ -10,9 +10,7 @@ Goal
 Contents
 - Hyperledger overview
 - Simple private blockchain (1orderer, 2peer, 2node)
-- Basic chain code coding 
-- Docker overview
-- AWS Setup
+- Basic chain code coding analysis
 
 
 Blockchain overview
@@ -68,21 +66,64 @@ Hyperledger overview
     - [Docs v1.1](http://hyperledger-fabric.readthedocs.io/en/v1.1.0-alpha/)
 
 
-Simple private blockchain
+Hyperledger Setup (Ubuntu 16.04)
 -------------
-- setup : http://hyperledger-fabric.readthedocs.io/en/release-1.1/getting_started.html
-- network (1orderer, 2peer, 2node) : http://hyperledger-fabric.readthedocs.io/en/release-1.1/build_network.html
-- app: http://hyperledger-fabric.readthedocs.io/en/release-1.1/write_first_app.html
+1. Docker CE
+    - https://docs.docker.com/install/linux/docker-ce/ubuntu/
+    ```console
+    sudo apt-get update
+    sudo apt-get install     apt-transport-https     ca-certificates     curl     software-properties-common
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+       $(lsb_release -cs) \
+       stable"
+    sudo apt-get update
+    sudo apt-get install docker-ce
+    docker -v
+    sudo usermod -aG docker $USER
+    [logout and login]
+    docker service ls
+    [not in swarm mode...]
+    ```
+2. Docker Compose
+    - https://docs.docker.com/compose/install/
+    ```console
+    sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
+    docker-compose --version
+    ```
+3. Golang
+    - https://tecadmin.net/install-go-on-ubuntu/
+    ```console
+    sudo tar -xvf go1.10.1.linux-amd64.tar.gz
+    sudo mv go /usr/local
+    ```
+4. NVM -> Node.js
+    - https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/
+    ```console
+    sudo apt-get install build-essential libssl-dev
+    curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
+    . ~/.bashrc
+    nvm install 8.9.4
+    ```
+5. Fabric Samples
+    - http://hyperledger-fabric.readthedocs.io/en/release-1.1/samples.html
+    ```console
+    curl -sSL https://goo.gl/6wtTN5 | bash -s 1.1.0
+    cd fabric-samples
+    git checkout 1252c7a0eee39cb7b0fe3162462607c632ea9ac0
+    ```    
 
-
-Basic chain code coding 
+Hyperledger Sample (Build Your First Network)
 -------------
-
-- http://hyperledger-fabric.readthedocs.io/en/release-1.1/chaincode4ade.html
-- fabcar
-- fabcoin (assignment)
-- automatic conditional transcation
-
+- http://hyperledger-fabric.readthedocs.io/en/release-1.1/build_network.html
+```console
+cd first-network
+./byfn.sh -m generate
+./byfn.sh -m up
+[check result]
+./byfn.sh -m down
+```
 
 Docker overview
 -------------
