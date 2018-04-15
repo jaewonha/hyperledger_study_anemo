@@ -38,6 +38,7 @@ Hyperledger overview
 
 - Usecases
     - Survey/Poll
+    - [Shipping](https://www.joc.com/maritime-news/container-lines/maersk-line-limited/blockchain-technology-stage-more-questions-answers_20180323.html)
     - [Official use cases](https://wiki.hyperledger.org/groups/requirements/use-case-inventory)*
 
 - Following Official Document
