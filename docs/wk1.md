@@ -1,5 +1,5 @@
 
-Hyperledger chaincode 구축해보기 (1wk)
+Hyperledger Fabric 구축 (1wk)
 =============
 
 Goal
