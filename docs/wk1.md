@@ -83,8 +83,8 @@ Hyperledger Setup (Ubuntu 16.04)
     docker -v
     sudo usermod -aG docker $USER
     [logout and login]
-    docker service ls
-    [not in swarm mode...]
+    docker ls
+    [shows empty without an error]
     ```
 2. Docker Compose
     - https://docs.docker.com/compose/install/
