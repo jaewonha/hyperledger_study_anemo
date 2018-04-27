@@ -27,7 +27,7 @@ ChainCode Analysis
     - http://hyperledger-fabric.readthedocs.io/en/release-1.1/write_first_app.html
     - http://hyperledger-fabric.readthedocs.io/en/release-1.1/understand_fabcar_network.html
 1. Marbles
-    - https://github.com/hyperledger/fabric-samples/blob/release-1.1/chaincode/marbles02/go/marbles_chaincode.go
+    - [Code](https://github.com/hyperledger/fabric-samples/blob/release-1.1/chaincode/marbles02/go/marbles_chaincode.go)
     - CreateCompositeKey
     - Rich Query
         - queryMarbles -> getQueryResultForQueryString
