@@ -39,7 +39,7 @@ ChainCode Deploy & Invoke
 1. [CodeBase](https://github.com/jaewonha/fabric-samples)
 1. Deploy
     - [1-Node / 1-Org](https://github.com/jaewonha/fabric-samples/blob/release/first-network/scripts/1node_standalone_fabcar_script.sh)
-    - [N-Node / N-Org](https://github.com/jaewonha/fabric-samples/blob/release/first-network/scripts/standalone_fabcar_script.sh)
+    - [N-Node / N-Org](https://github.com/jaewonha/fabric-samples/blob/release/first-network/scripts/orgN.sh)
     - byfn.sh
 2. Invoke
     - [Fabcar using Node.JS](http://hyperledger-fabric.readthedocs.io/en/release-1.1/build_network.html)
