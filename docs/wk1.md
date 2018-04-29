@@ -73,18 +73,18 @@ Hyperledger Setup (Ubuntu 16.04)
     - https://docs.docker.com/install/linux/docker-ce/ubuntu/
     ```console
     sudo apt-get update
-    sudo apt-get install     apt-transport-https     ca-certificates     curl     software-properties-common
+    sudo apt-get -y install     apt-transport-https     ca-certificates     curl     software-properties-common
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
        $(lsb_release -cs) \
        stable"
     sudo apt-get update
-    sudo apt-get install docker-ce
+    sudo apt-get -y install docker-ce
     docker -v
     sudo usermod -aG docker $USER
     [logout and login]
-    docker ls
-    [shows empty without an error]
+    docker service ls
+    [Error response from daemon:...]
     ```
 2. Docker Compose
     - https://docs.docker.com/compose/install/
@@ -96,13 +96,17 @@ Hyperledger Setup (Ubuntu 16.04)
 3. Golang
     - https://tecadmin.net/install-go-on-ubuntu/
     ```console
+    wget https://dl.google.com/go/go1.10.1.linux-amd64.tar.gz
     sudo tar -xvf go1.10.1.linux-amd64.tar.gz
     sudo mv go /usr/local
+    vi ~/.bashrc
+    [add /usr/local/go/bin to PATH variable]
+    . ~/.basrhc
     ```
 4. NVM -> Node.js
     - https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/
     ```console
-    sudo apt-get install build-essential libssl-dev
+    sudo apt-get -y install build-essential libssl-dev
     curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
     . ~/.bashrc
     nvm install 8.9.4
@@ -112,7 +116,6 @@ Hyperledger Setup (Ubuntu 16.04)
     ```console
     curl -sSL https://goo.gl/6wtTN5 | bash -s 1.1.0
     cd fabric-samples
-    git checkout 1252c7a0eee39cb7b0fe3162462607c632ea9ac0
     ```    
 
 Hyperledger Sample (Build Your First Network)
@@ -120,10 +123,10 @@ Hyperledger Sample (Build Your First Network)
 - http://hyperledger-fabric.readthedocs.io/en/release-1.1/build_network.html
 ```console
 cd first-network
-./byfn.sh -m generate
-./byfn.sh -m up
+./byfn.sh generate
+./byfn.sh up
 [check result]
-./byfn.sh -m down
+./byfn.sh down
 ```
 
 Docker overview
