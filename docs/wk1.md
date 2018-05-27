@@ -69,6 +69,7 @@ Hyperledger overview
 
 Hyperledger Setup (Ubuntu 16.04)
 -------------
+[automatic install script 1-4 is here](https://github.com/jaewonha/hyperledger_study_anemo/blob/master/src/setup_fabric.sh)
 1. Docker CE
     - https://docs.docker.com/install/linux/docker-ce/ubuntu/
     ```console
